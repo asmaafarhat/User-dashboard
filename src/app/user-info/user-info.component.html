@@ -1,0 +1,23 @@
+<div *ngIf="!isLoading" class="spinner">
+    <mat-spinner mode="indeterminate" color="warn"></mat-spinner>
+</div>
+<div *ngIf="isLoading">
+    <div class="previous" (click)="backClicked()">
+          &laquo; Previous
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{user ? user.avatar : ''}}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{user ? user.id : ''}} - {{user ? user.first_name : ''}} {{user ? user.last_name : ''}}</h5>
+                        <p class="card-text">{{user ? user.email : ''}}</p>
+                        <p class="card-text">{{support ? support.text : ''}}</p>
+                        <a href="{{support ? support.url : ''}}" class="btn btn-primary">More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

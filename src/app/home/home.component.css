@@ -1,0 +1,30 @@
+div.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center; 
+}
+
+.card {
+    cursor: pointer;
+}
+
+.flex {
+    display: flex
+}
+
+.navbar {
+    justify-content: space-between;
+}
+
+.spinner {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}

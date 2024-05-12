@@ -1,0 +1,56 @@
+<div *ngIf="!isLoading" class="spinner">
+    <mat-spinner mode="indeterminate" color="warn"></mat-spinner>
+</div>
+<div *ngIf="isLoading">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light flex">
+        <a class="navbar-brand" href="#">Dashboard Users</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <form class="form-inline my-2 my-lg-0 flex">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" (keyup)="onKeyUp($event)">
+        </form>
+    </nav>
+    
+    <div class="pt-5">
+        <div class="container" *ngIf="!noResult">
+            <div class="row gap-3" *ngIf="user.id == 0">
+                <div class="col-3" *ngFor="let user of users; let i = index">
+                    <div class="card" style="width: 15rem;" (click)="userInfo(user.id)">
+                        <img class="card-img-top" src="{{user.avatar}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{user.id}} - {{user.first_name}} {{user.last_name}}</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gap-3" *ngIf="user.id > 0">
+                <div class="col-3">
+                    <div class="card" style="width: 15rem;" (click)="userInfo(user.id)">
+                        <img class="card-img-top" src="{{user.avatar}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{user.id}} - {{user.first_name}} {{user.last_name}}</h5>
+                        </div>
+                    </div>
+            </div>
+            </div>
+        </div>
+    
+        <div *ngIf="noResult">
+              <h2>
+                لا توجد نتائج
+              </h2>
+        </div>
+     </div>
+    
+    
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item" *ngFor="let number of numbers; let i = index" [ngClass]="page === i+1  ? 'active' : '' " (click)="onPageChange(i+1)">
+                <a class="page-link" href="#">{{ i+1 }}</a>
+            </li>
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,23 @@
+div.col-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.previous {
+    cursor: pointer;
+    background-color: red;
+    width: 5.5rem;
+    display: flex;
+    margin: 1rem;
+    justify-content: center;
+    color: white;
+}
+
+.spinner {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
